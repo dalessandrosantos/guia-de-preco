@@ -27,7 +27,13 @@ function displayItens(products) {
     console.log(products)
     productList.innerHTML = products.map(product => `
         <div class="product-card">
-            <img src="${product.thumbnail}">
+            <img src="${product.thumbnail}" alt="${product.title}">
+            <h3>${product.title}</h3>
+            <p>${product.price.toLocaleString('pt-br', {
+                style: 'currency', 
+                currency: 'BRL',
+            })}</p>
+            <p>Loja: ${product.seller.nickname}</p>
 
         </div>
         
